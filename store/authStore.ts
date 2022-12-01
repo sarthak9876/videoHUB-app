@@ -1,5 +1,5 @@
 import create from 'zustand';
-import { persist } from 'zustand/middleware';
+import { persist } from 'zustand/middleware'; // to remian active even when the page reloads
 import axios from 'axios';
 
 const authStore= (set: any) => ({

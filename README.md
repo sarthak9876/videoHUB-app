@@ -1,6 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) .
+
+
+## Tools:
+- [NextJs](https://nextjs.org) - For UI of the page
+- [Sanity](https://sanity.io) - For storing the User data and Video information.
+- [Zustand](https://github.com/pmndrs/zustand) - Used for state management in place of Redux
+
+
+## Key features:
+- Authentication using Google OAuth2.0
+- Upload Videos.
+- Search for videos with particular keyword.
+- Filter out videos based on particular topic.
+- Logout and Login by clicking on logout and login iconfrom Navbar.
+- Click on video to see its likes and comments.
+- Click on profile to see your uploaded videos.
+
+
 
 ## Getting Started
+
+**Step 1: Clone the code into a fresh folder**
+
+```
+$ git clone https://github.com/sarthak9876/videoHUB-app.git
+$ cd videoHUB-app
+```
+
+**Step 2: Install Dependencies**
+
+We need to install the server dependencies, which are listed in `package.json`.
+
+```
+$ npm install
+```
+
+**Step 3: Run application**
 
 First, run the development server:
 
