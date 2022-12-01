@@ -68,11 +68,11 @@ const onVideoPress = () => {
             onMouseEnter={() => setIsHover(true)} //setting the isHover property to true if mouse enters the video area
             onMouseLeave={() => setIsHover(false)} // setting the isHover property to false if mouse leaves the video area
             className='rounded-3xl'>
-                <Link href='/' >
+                <Link href={`/detail/${post._id}`} >
                     <video 
                     loop  // playing the video in loop
                     ref={videoRef}
-                    className='lg:w[600px] h-[300px] md:h-[400px] lg:h-[530px] w-[200px] rounded-2xl cursor-pointer bg-gray-100 '
+                    className='lg:w-[600px] h-[300px] md:h-[400px] lg:h-[530px] w-[200px] rounded-2xl cursor-pointer bg-gray-100 '
                     src={post.video.asset.url} //
                     >
 
@@ -81,14 +81,18 @@ const onVideoPress = () => {
 
                 {isHover && (
 
-                    <div>
+                    <div className='absolute bottom-6 cursor-pointer left-8 
+                    md:left-14 lg:left-0 flex gap-10 lg:justify-between
+                     w-[100px] md:w-[50px] p-3 '>
                        { isPlaying ? (
+
                         <button onClick={onVideoPress}>
                             <BsFillPauseFill 
                             className='text-black text-2xl lg:text-4xl' 
                             />
                         </button>
                        ) :(
+
                         <button onClick={onVideoPress}>
                             <BsFillPlayFill 
                             className='text-black text-2xl lg:text-4xl' 
@@ -97,13 +101,17 @@ const onVideoPress = () => {
                        )} 
 
                        { isMuted ? (
-                        <button>
+
+                        <button
+                        onClick={() => setIsMuted(false)}>
                             <HiVolumeOff 
                             className='text-black text-2xl lg:text-4xl' 
                             />
                         </button>
                        ) :(
-                        <button>
+
+                        <button
+                        onClick={() => setIsMuted(true)}>
                             <HiVolumeUp
                             className='text-black text-2xl lg:text-4xl' 
                             />

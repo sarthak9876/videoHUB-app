@@ -12,6 +12,13 @@ if(req.method === 'GET'){
 
     res.status(200).json(data);
     
+}else if(req.method === 'POST'){
+  const document= req.body;
+
+  client.create(document)
+  .then(()=> res.status(201).json('Video Created Successfully')) // status 201 stands for created
 }
-//   res.status(200).json({ name: 'Response Success' })
+
+
 }
+    

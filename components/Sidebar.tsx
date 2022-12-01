@@ -40,33 +40,7 @@ const normalLink ='flex items-center gap-3 hover:bg-primary p-3 justify-center x
                     </div>
                 </Link>
             </div>  
-            {!userProfile && (
-            <div className='px-2 py-4 hidden xl:block'>
-                <p className='text-gray-400'>Log in to like and comment on videos</p>
-                <div className='pr-4'>
-                    <GoogleLogin 
-                    clientId=''
-                    render={(renderProps) => (
-                        <button
-                        className='bg-white text-lg text-[#f51997]
-                        border-[1px] border-[#f51997] font-semibold
-                        px-6 py-3 rounded-md outline-none w-full mt-3
-                        hover:text-white hover:bg-[#f51997] cursor-pointer'
-                        onClick={renderProps.onClick}
-                        disabled={renderProps.disabled}
-
-                        >
-                        Log In 
-                        </button>
-                    )}
-                    onSuccess={() => {}}
-                    onFailure={() => {}}
-                    cookiePolicy='single_host_origin'
-
-                    />
-                </div>
-            </div>
-        )}
+            
         
         <Discover />
         <SuggestedAccounts />
