@@ -1,3 +1,5 @@
+This is a video posting social media app like Tiktok where you can create profile using the Google OAuth2.0 and logout using the logout icon on top right which appears once you are logged in successfully. User can start uploading the videos once they are logged in and filter the videos based on the featured topics present on the left sidebar. User can also clikc on video for video information i.e, likes and comments. User can aslo click on their profile to see the video which he/she have uploaded. User can also see featured accounts on the left sidebar above the Featured topics section.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) .
 
 
@@ -5,7 +7,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [NextJs](https://nextjs.org) - For UI of the page
 - [Sanity](https://sanity.io) - For storing the User data and Video information.
 - [Zustand](https://github.com/pmndrs/zustand) - Used for state management in place of Redux
-
+- [Tailwind](https://tailwindcss.com/) 
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## Key features:
 - Authentication using Google OAuth2.0
