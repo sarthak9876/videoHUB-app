@@ -12,7 +12,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Key features:
 - Authentication using Google OAuth2.0
-- Upload Videos.
+- User can upload Videos.
 - Search for videos with particular keyword.
 - Filter out videos based on particular topic.
 - Logout and Login by clicking on logout and login iconfrom Navbar.
