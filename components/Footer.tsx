@@ -7,7 +7,7 @@ const Footer = () => {
     const List = ({items, mt}: {items: string[], mt: boolean }) => ( // as we are using typescript here so we need to mention what is the type of the items here which in our case is array of strings. The reason why it asks the data type is to prevent any trouble from occuring in future.
         <div className="flex flex-wrap gap-2 ${mt && 'mt-5'} mt-5 ">
         {footerList1.map((item) => (
-            <p key={item} classNametext-gray-400 text-security='m cursor-pointer hover:underline'>
+            <p key={item} className='text-gray-400  cursor-pointer hover:underline'>
                 {item}
             </p>
         ))}

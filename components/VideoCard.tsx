@@ -11,7 +11,9 @@ import {GoVerified } from 'react-icons/go';
 interface IProps{
     post: Video;
 }
-const VideoCard:NextPage<IProps> = ({post}) => {
+
+
+const VideoCard:NextPage<IProps> = ({post: {caption, postedBy, video, _id, likes}}) => {
 
 const [isHover , setIsHover] = useState(false); // to check whether user is hovering over the video or not to perform some state action.
 const [isPlaying, setIsPlaying] = useState(false); // to check whetehr the video is playing or not
@@ -20,14 +22,20 @@ const [isMuted, setIsMuted] = useState(false); // to check whether the video is 
 const videoRef = useRef<HTMLVideoElement>(null); // if we want to play and pause our video on click then we have to add something known as refs in REACT which we import using useRef hook in React
 const onVideoPress = () => {
     if(isPlaying){
-        videoRef.current?.pause();
+        videoRef?.current?.pause();
         setIsPlaying(false);
     }
     else{
-        videoRef.current?.play();
+        videoRef?.current?.play();
         setIsPlaying(true);
     }
 }
+
+useEffect(() => {
+if(videoRef?.current){
+    videoRef.current.muted= isMuted;
+}
+},[isMuted])
 
   return (
     <div className='flex flex-col border-b-2 border-gray-200 pb-6'>
@@ -40,7 +48,7 @@ const onVideoPress = () => {
                     width={62}
                      height={62}
                      className="rounded-full"
-                     src={post.postedBy.image} // passing the profile pic of the user through 'post' prop passed at the start. The user was created in the sanity console.
+                     src={postedBy?.image} // passing the profile pic of the user through 'post' prop passed at the start. The user was created in the sanity console.
                      alt="Profile photo"
                      layout='responsive'
                      />
@@ -51,11 +59,11 @@ const onVideoPress = () => {
                 <Link href='/'>
                     <div className='flex items-center gap-2'>
                         <p className='flex gap-2 items-center md:text-md font-bold text-primary'>
-                        {post.postedBy.userName}{` `}  {/* passing the username of the user created in the sanity console */}
+                        {postedBy.userName}{` `}  {/* passing the username of the user created in the sanity console */}
                         <GoVerified className='text-blue-400 text-md' />
                         </p>
                         <p className='capitalize font-medium text-xs text-gray-500 hidden md:block'>
-                        {post.postedBy.userName}
+                        {postedBy.userName}
                         </p>
                     </div>
                 </Link>
@@ -68,15 +76,13 @@ const onVideoPress = () => {
             onMouseEnter={() => setIsHover(true)} //setting the isHover property to true if mouse enters the video area
             onMouseLeave={() => setIsHover(false)} // setting the isHover property to false if mouse leaves the video area
             className='rounded-3xl'>
-                <Link href={`/detail/${post._id}`} >
+                <Link href={`/detail/${_id}`} >
                     <video 
                     loop  // playing the video in loop
                     ref={videoRef}
                     className='lg:w-[600px] h-[300px] md:h-[400px] lg:h-[530px] w-[200px] rounded-2xl cursor-pointer bg-gray-100 '
-                    src={post.video.asset.url} //
-                    >
-
-                    </video>
+                    src={video.asset.url} 
+                    ></video>
                 </Link>
 
                 {isHover && (
@@ -124,7 +130,7 @@ const onVideoPress = () => {
 
       </div>
     
-  )
-}
+  );
+};
 
-export default VideoCard
+export default VideoCard;

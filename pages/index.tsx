@@ -6,6 +6,8 @@ import { NextPage } from 'next';
 import {Video } from '../types';
 import VideoCard from '../components/VideoCard';
 import NoResults from '../components/NoResults';
+import { BASE_URL } from '../utils';
+
 
 interface IProps {
   videos: Video[]
