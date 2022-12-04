@@ -31,11 +31,22 @@ interface IProps {
   )
 }
 
-export const getServerSideProps = async () => {
-  const { data } = await axios.get('http://localhost:3000/api/post'); // this will fetch the data from the post subfolder which is present in the api folder
+export const getServerSideProps = async ({
+  query: {topic}
+}: { 
+  query: {topic: string}
+}) => {
+
+  let response = null;
+  if(topic){
+      response = await axios.get(`http://localhost:3000/api/discover/${topic}`);
+  }else{
+      response = await axios.get(`http://localhost:3000/api/post`); // this will fetch the data from the post subfolder which is present in the api folder
+    }
+  
   return{
     props: {
-      videos: data
+      videos: response.data
     }
   }
 }

@@ -30,7 +30,7 @@ const { userProfile, allUsers} = useAuthStore();
     <div className='border-t-2 border-gray-200 pt-4 border-b-2 lg:pb-0 pb-[100px] bg-[#f8f8f8] px-10'>
       <div className='overflow-scroll lg:h-[475px]'>
 
-        {Comments?.length >0 ? (
+        {comments?.length > 0 ? (
             comments.map((item, idx) => (
                 <>
                 {allUsers?.map((user: IUser) => ( //iterate over every user and see what comment they have posted
