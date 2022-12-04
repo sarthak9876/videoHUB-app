@@ -7,6 +7,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Tools:
 - [NextJs](https://nextjs.org) - For UI of the page
+- [ReactJS](https://reactjs.org)
 - [Sanity](https://sanity.io) - For storing the User data and Video information.
 - [Zustand](https://github.com/pmndrs/zustand) - Used for state management in place of Redux
 - [Tailwind](https://tailwindcss.com/) 
