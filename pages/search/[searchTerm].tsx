@@ -90,7 +90,7 @@ const Search = ({ videos} : {videos: Video[]}) => {
 
 
 export const getServerSideProps =  async ({ params: { searchTerm }}:{ params:{ searchTerm: string }}) =>{ //we use getServerSIdeProps to fetch data because when we use [id] as the name of the file then we have to fetch data and in NextJS we fetch data using the getServerSideProps function
-    const res = await axios.get(`http://localhost:3000/api/search/${searchTerm}`)
+    const res = await axios.get(`https://vidhub-app.vercel.app/api/search/${searchTerm}`)
     return{
         props: { videos: res.data}
     }

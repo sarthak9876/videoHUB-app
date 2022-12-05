@@ -15,7 +15,7 @@ const authStore= (set: any) => ({
 
 
     fetchAllUsers: async () => {
-        const response = await axios.get(`http://localhost:3000/api/users`);
+        const response = await axios.get(`https://vidhub-app.vercel.app/api/users`);
         set({ allUsers: response.data})
     }
 });

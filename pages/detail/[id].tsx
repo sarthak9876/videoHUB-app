@@ -51,7 +51,7 @@ const Detail = ({postDetails}: IProps) => {
 
   const handleLike = async (like: boolean) => {
     if(userProfile){
-      const {data} = await axios.put('http://localhost:3000/api/like',{
+      const {data} = await axios.put('https://vidhub-app.vercel.app/api/like',{
         userId: userProfile._id,
         postId: post._id,
         like
@@ -67,7 +67,7 @@ const Detail = ({postDetails}: IProps) => {
     if(userProfile && comment ){
       setIsPostingComment(true);
 
-      const {data} = await axios.put(`http://localhost:3000/api/post/${post._id}`,{
+      const {data} = await axios.put(`https://vidhub-app.vercel.app/api/post/${post._id}`,{
         userId: userProfile._id,
         comment,
       });
@@ -214,7 +214,7 @@ export const getServerSideProps = async ({
 }: { 
   params: { id: string}
 }) => {
-  const {data} = await axios.get(`http://localhost:3000/api/post/${id}`)
+  const {data} = await axios.get(`https://vidhub-app.vercel.app/api/post/${id}`)
 
   return {
     props: { postDetails: data}

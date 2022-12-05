@@ -39,9 +39,9 @@ export const getServerSideProps = async ({
 
   let response = null;
   if(topic){
-      response = await axios.get(`http://localhost:3000/api/discover/${topic}`);
+      response = await axios.get(`https://vidhub-app.vercel.app/api/discover/${topic}`);
   }else{
-      response = await axios.get(`http://localhost:3000/api/post`); // this will fetch the data from the post subfolder which is present in the api folder
+      response = await axios.get(`https://vidhub-app.vercel.app/api/post`); // this will fetch the data from the post subfolder which is present in the api folder
     }
   
   return{
